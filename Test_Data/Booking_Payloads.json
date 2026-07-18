@@ -1,0 +1,51 @@
+{
+  "valid_payloads": [
+    {
+      "scenario": "Standard booking with breakfast",
+      "firstname": "Jim",
+      "lastname": "Brown",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-10"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    {
+      "scenario": "Budget booking without deposit",
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "totalprice": 50,
+      "depositpaid": false,
+      "bookingdates": {
+        "checkin": "2026-05-15",
+        "checkout": "2026-05-20"
+      },
+      "additionalneeds": "None"
+    }
+  ],
+  "invalid_payloads": [
+    {
+      "scenario": "Missing required field (lastname)",
+      "firstname": "John",
+      "totalprice": 150,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-02-01",
+        "checkout": "2026-02-05"
+      }
+    },
+    {
+      "scenario": "Incorrect date format",
+      "firstname": "Jack",
+      "lastname": "Smith",
+      "totalprice": 120,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "01-02-2026",
+        "checkout": "05-02-2026"
+      }
+    }
+  ]
+}
