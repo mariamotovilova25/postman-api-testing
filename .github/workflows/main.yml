@@ -1,0 +1,36 @@
+name: Postman API Tests
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  schedule:
+    - cron: '0 8 * * 1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Newman & Reporters
+      run: |
+        npm install -g newman newman-reporter-htmlextra
+
+    - name: Run Postman Collection
+      run: |
+        newman run *.json -r cli,htmlextra --reporter-htmlextra-export newman/report.html || true
+
+    - name: Upload Test Report Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: postman-html-report
+        path: newman/report.html
