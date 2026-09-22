@@ -1,5 +1,5 @@
 # Restful-Booker API Testing Portfolio Project 
-
+![Postman API Tests](https://github.com/mariamotovilova25/postman-api-testing/actions/workflows/main.yml/badge.svg)
 This repository contains a professional and fully comprehensive API testing suite built using **Postman** and **JavaScript (Chai Assertion Library)**. The project covers the complete CRUD lifecycle of the booking service on the Restful-Booker platform, accompanied by full test documentation.
 
 ## 🛠️ Tech Stack & Concepts Used
